@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Multiplication Table </h1>
+    <label for = "sv"> Start Value: </label>
+    <input type = "number" id="num1" max = 10 min = 2>
+    <label for = "ev"> End Value: </label>
+    <input type = "number" id="num2" max = 10 min = 2>
+    <button onclick = "gentab()"> Generate Table </button>
+
+    <table id = "mt" border = "1"></table>
+
+    <script>
+        function gentab() {
+            var num1 = parseInt(document.getElementById ("num1").value);
+            var num2 = parseInt(document.getElementById ("num2").value);
+            var table = document.getElementById ("mt");
+
+            if (num1 < 2 || num1 > 10 || num2 < 2 || num2 > 10) {
+                alert("Please enter numbers between 2 and 10");
+                return;
+            }
+
+            table.innerHTML = '';
+
+            for (var a = 1; a <= num1; a++) {
+                var rows = table.insertRow();
+                for (var c = 1; c <= num2; c++) {
+                    var b = rows.insertCell();
+                    b.innerText = a * c;
+                }
+            }
+        }
+    </script>
+
+</boda>
+</html>
